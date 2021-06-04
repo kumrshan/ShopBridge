@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="5.0.6" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopBridge.BusinessObject\ShopBridge.BusinessObject.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="shopBridge.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Project>
