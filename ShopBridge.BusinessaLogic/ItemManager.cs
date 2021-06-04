@@ -43,7 +43,7 @@ namespace ShopBridge.BusinessaLogic
         {
             HttpResponse httpResponse = new HttpResponse();
             httpResponse.StatusCode = 200;
-            if (string.IsNullOrWhiteSpace(item.Name) || item.Name=="string")
+            if (string.IsNullOrWhiteSpace(item.Name) || item.Name == "string")
             {
                 httpResponse.Message = "Name cannot be empty";
                 httpResponse.StatusCode = 400;
@@ -59,7 +59,7 @@ namespace ShopBridge.BusinessaLogic
                 httpResponse.StatusCode = 400;
             }
             var existItem = await _itemRepositrioy.GetItemByName(item.Name);
-            if (existItem!=null && existItem.Name != null)
+            if (existItem != null && existItem.Name != null)
             {
                 httpResponse.Message = "Item Name Already Exist in inventory";
                 httpResponse.StatusCode = 400;
@@ -79,7 +79,7 @@ namespace ShopBridge.BusinessaLogic
                 else
                 {
                     var item = await _itemRepositrioy.GetItemByID(itemID);
-                    if (item != null && item.Id!=0)
+                    if (item != null && item.Id != 0)
                     {
                         var isDeleted = await _itemRepositrioy.DeleteItem(itemID);
                         httpResponse.Message = $"ID {itemID} Deleted Successfully";
@@ -121,10 +121,11 @@ namespace ShopBridge.BusinessaLogic
                 if (itemID != item.Id)
                 {
                     httpResponse.Message = "ID doesnt match with model id";
+                    return httpResponse;
                 }
-                else
+                httpResponse = await ValidateItem(item);
+                if (httpResponse.StatusCode != 400)
                 {
-
                     var isupdated = await _itemRepositrioy.udpateItem(item);
                     httpResponse.Message = $"ID {itemID} updated Successfully";
                     httpResponse.StatusCode = 200;
