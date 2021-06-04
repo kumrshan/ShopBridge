@@ -1,6 +1,6 @@
 This Solution contains all dependable project for shopBridge API as separate project so that in future it can be used for other project if needed which will be easy for doing new changes.OpenAPI Swagger is attached in project.
 
-Startup --> have to set service layer as startup project and run with IISexpress swagger will open with help of the all action methods can be invoked and tested.
+Run --> have to set ShopBridge.ServiceLayer as startup project and run with IISexpress swagger will open with help of the all action methods can be invoked and tested.
 
 Projects 
 1.) ShopBridge.ServiceLayer --> Actual API service layer which will contain controllers.
